@@ -9,6 +9,6 @@
 
 @interface ViewController : UIViewController
 
-
+@property (nonatomic, strong)      NSNumber      *      counter;
 @end
 
