@@ -92,12 +92,17 @@ typedef enum {
     if ([self.timerNoticeHideTimer isValid]){
         [self.timerNoticeHideTimer invalidate];
     }
+    
+    
     self.busyIndicatorView.hidden = !isWait;
+   
     BOOL hideNotice = [message isEqual:EX_MESSAGE_NOMESSAGE];
     if (!hideNotice){
         self.eventNoticeLabel.text = message;
         self.timerNoticeHideTimer = [NSTimer scheduledTimerWithTimeInterval:EX_TIMER_MESSAGECLEAR repeats:NO block:^(NSTimer * timer){
-            [self userWait:NO message:EX_MESSAGE_NOMESSAGE];
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self userWait:NO message:EX_MESSAGE_NOMESSAGE];
+            });
             self.identifierTextField.text = nil;
         }];
         
@@ -114,7 +119,9 @@ typedef enum {
 
 -(void)clearWaitState{
     if ([self.timerNoticeHideTimer isValid] || !self.busyIndicatorView.hidden){
-        [self userWait:NO message:EX_MESSAGE_NOMESSAGE];
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self userWait:NO message:EX_MESSAGE_NOMESSAGE];
+        });
         
     }
 }
@@ -385,7 +392,9 @@ typedef enum {
 
 -(void)hitEndpointWith:(NSString *)placeIdentifier{
    
-    [self userWait:YES message:EX_MESSAGE_NOMESSAGE];
+    dispatch_async(dispatch_get_main_queue(),^{
+        [self userWait:YES message:EX_MESSAGE_NOMESSAGE];
+    });
     NSString * urlString = [NSString stringWithFormat:@"%@/%@", EXERCISEENDPOINT_PREFIX, placeIdentifier];
     NSURL * url = [NSURL URLWithString:urlString];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
@@ -452,7 +461,9 @@ typedef enum {
     
     -(NSDictionary *)returnFromEndpointWithRefreshDataFor:(NSString *)placeIdentifier{
       
-        [self userWait:YES message:EX_MESSAGE_NOMESSAGE];
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self userWait:YES message:EX_MESSAGE_NOMESSAGE];
+        });
         
         dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
         

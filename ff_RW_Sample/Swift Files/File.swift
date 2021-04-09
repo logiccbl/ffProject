@@ -66,6 +66,10 @@ enum EX_ForeCastPrelim : Int {
     var isHistoryFlag = false
     @IBOutlet weak var scrollFlashers: UIView!
     
+    var isAutoRefresh = false
+    var timerAutoRefreshTimer : Timer?
+    let RefreshTime = 20.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -213,10 +217,14 @@ enum EX_ForeCastPrelim : Int {
     func flashScrollPrompt(){
         
         _ = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false){ timer in
-            
-            self.scrollFlashers.isHidden = false
+            DispatchQueue.main.async{
+                self.scrollFlashers.isHidden = false
+            }
             _ = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: false) {timer in
-                self.scrollFlashers.isHidden = true
+                
+                DispatchQueue.main.async{
+                    self.scrollFlashers.isHidden = true
+                }
             }
         }
         
@@ -224,8 +232,7 @@ enum EX_ForeCastPrelim : Int {
         
     }
     
-    @IBAction func refresh(_ sender: UIBarButtonItem) {
-        
+    func refreshOps(){
         DispatchQueue.main.async {
             self.refreshBusyIndicator.isHidden = false
             self.disableView(true)
@@ -244,6 +251,29 @@ enum EX_ForeCastPrelim : Int {
                         }
                     }
                 }
+            }
+        }
+    }
+    
+    @IBAction func refresh(_ sender: UIBarButtonItem) {
+        refreshOps()
+    }
+    
+    
+    
+    @IBAction func autoRefreshToggle(_ sender: UIBarButtonItem){
+        
+        self.isAutoRefresh = !self.isAutoRefresh
+        
+        if self.isAutoRefresh{
+            refreshOps()
+            self.timerAutoRefreshTimer = Timer.scheduledTimer(withTimeInterval: RefreshTime, repeats: true, block: { timer in
+                self.refreshOps()
+            })
+        }
+        else{
+            if let timer = self.timerAutoRefreshTimer{
+                timer.invalidate()
             }
         }
     }
