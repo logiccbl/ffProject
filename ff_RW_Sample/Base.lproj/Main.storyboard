@@ -334,16 +334,16 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="i3K-Ah-D8l" userLabel="Altitude Pressure Stack View">
                                                                     <rect key="frame" x="60" y="143.5" width="254.5" height="20.5"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpN-7v-Ppq" userLabel="Pressure Stack View">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qpN-7v-Ppq" userLabel="Pressure Stack View">
                                                                             <rect key="frame" x="0.0" y="0.0" width="120.5" height="20.5"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pres (Hg):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCv-5Q-wjr" userLabel="Pres">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pres (Hg):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCv-5Q-wjr" userLabel="Pres">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="77" height="20.5"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWr-fk-9QW">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWr-fk-9QW">
                                                                                     <rect key="frame" x="77" y="0.0" width="43.5" height="20.5"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                                                     <nil key="textColor"/>
@@ -351,16 +351,16 @@
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqV-ks-zJk" userLabel="Altitude Stack View">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CqV-ks-zJk" userLabel="Altitude Stack View">
                                                                             <rect key="frame" x="130.5" y="0.0" width="124" height="20.5"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dens. Alt: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uu-gN-ga8" userLabel="Dens ALt">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dens. Alt: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uu-gN-ga8" userLabel="Dens ALt">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="80.5" height="20.5"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWW-Bw-2X3">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWW-Bw-2X3">
                                                                                     <rect key="frame" x="80.5" y="0.0" width="43.5" height="20.5"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                                                     <nil key="textColor"/>
@@ -1155,11 +1155,12 @@
                                 </items>
                             </toolbar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="VRB-le-UxZ">
-                                <rect key="frame" x="60" y="783" width="20" height="20"/>
+                                <rect key="frame" x="60" y="835" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="jt4-xk-DcC"/>
                                     <constraint firstAttribute="width" constant="20" id="qGI-8g-GRY"/>
                                 </constraints>
+                                <color key="color" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -1173,7 +1174,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="KH4-99-Vp7" secondAttribute="bottom" id="gAh-Z7-r2m"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xeP-Zv-irI" secondAttribute="trailing" id="gxu-Uy-tW2"/>
                             <constraint firstAttribute="bottomMargin" secondItem="xeP-Zv-irI" secondAttribute="bottom" constant="40" id="gzd-qr-RDr"/>
-                            <constraint firstItem="VRB-le-UxZ" firstAttribute="top" secondItem="KH4-99-Vp7" secondAttribute="top" constant="-30" id="jyh-K8-itv"/>
+                            <constraint firstItem="VRB-le-UxZ" firstAttribute="top" secondItem="KH4-99-Vp7" secondAttribute="top" constant="22" id="jyh-K8-itv"/>
                             <constraint firstItem="VRB-le-UxZ" firstAttribute="leading" secondItem="KH4-99-Vp7" secondAttribute="leading" constant="60" id="ktb-pX-Th6"/>
                             <constraint firstItem="KH4-99-Vp7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oSg-lQ-qoj"/>
                             <constraint firstItem="KH4-99-Vp7" firstAttribute="top" secondItem="Uwu-IT-U34" secondAttribute="bottom" constant="20" id="skf-CN-Buj"/>
