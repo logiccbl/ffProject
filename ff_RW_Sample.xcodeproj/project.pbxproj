@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F423632261D5D7F0096C229 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F423631261D5D7F0096C229 /* File.swift */; };
+		4F7D62AF261FD2BE00612ECB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D62AE261FD2BE00612ECB /* Store.swift */; };
+		4F7D62DE261FE0BF00612ECB /* ff_RW_Sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D62DC261FE0BF00612ECB /* ff_RW_Sample.xcdatamodeld */; };
+		4FA3A784261FE48200513762 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3A782261FE48200513762 /* Place+CoreDataClass.swift */; };
+		4FA3A785261FE48200513762 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3A783261FE48200513762 /* Place+CoreDataProperties.swift */; };
+		4FD674FD261E5803001816CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD674FC261E5803001816CB /* Model.swift */; };
+		4FD67503261EB03E001816CB /* XTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD67502261EB03E001816CB /* XTableViewCell.swift */; };
 		4FF1DE6B261CD8BC0087F00F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1DE6A261CD8BC0087F00F /* AppDelegate.m */; };
 		4FF1DE6E261CD8BC0087F00F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1DE6D261CD8BC0087F00F /* SceneDelegate.m */; };
 		4FF1DE71261CD8BC0087F00F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1DE70261CD8BC0087F00F /* ViewController.m */; };
@@ -17,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F423630261D5D7E0096C229 /* ff_RW_Sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ff_RW_Sample-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F423631261D5D7F0096C229 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		4F7D62AE261FD2BE00612ECB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		4F7D62DD261FE0BF00612ECB /* ff_RW_Sample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ff_RW_Sample.xcdatamodel; sourceTree = "<group>"; };
+		4FA3A782261FE48200513762 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4FA3A783261FE48200513762 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4FD674FC261E5803001816CB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4FD67502261EB03E001816CB /* XTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTableViewCell.swift; sourceTree = "<group>"; };
 		4FF1DE66261CD8BC0087F00F /* ff_RW_Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ff_RW_Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF1DE69261CD8BC0087F00F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4FF1DE6A261CD8BC0087F00F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +57,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FA3A787261FE49A00513762 /* ModelBase Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FA3A782261FE48200513762 /* Place+CoreDataClass.swift */,
+				4FA3A783261FE48200513762 /* Place+CoreDataProperties.swift */,
+			);
+			name = "ModelBase Files";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4FA3A788261FE4DF00513762 /* Swift Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F423631261D5D7F0096C229 /* File.swift */,
+				4FD674FC261E5803001816CB /* Model.swift */,
+				4F7D62AE261FD2BE00612ECB /* Store.swift */,
+				4FD67502261EB03E001816CB /* XTableViewCell.swift */,
+			);
+			path = "Swift Files";
+			sourceTree = "<group>";
+		};
+		4FA3A78A261FE50600513762 /* ObjC Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FF1DE69261CD8BC0087F00F /* AppDelegate.h */,
+				4FF1DE6A261CD8BC0087F00F /* AppDelegate.m */,
+				4FF1DE6C261CD8BC0087F00F /* SceneDelegate.h */,
+				4FF1DE6D261CD8BC0087F00F /* SceneDelegate.m */,
+				4FF1DE6F261CD8BC0087F00F /* ViewController.h */,
+				4FF1DE70261CD8BC0087F00F /* ViewController.m */,
+			);
+			path = "ObjC Files";
+			sourceTree = "<group>";
+		};
 		4FF1DE5D261CD8BC0087F00F = {
 			isa = PBXGroup;
 			children = (
@@ -61,17 +110,16 @@
 		4FF1DE68261CD8BC0087F00F /* ff_RW_Sample */ = {
 			isa = PBXGroup;
 			children = (
-				4FF1DE69261CD8BC0087F00F /* AppDelegate.h */,
-				4FF1DE6A261CD8BC0087F00F /* AppDelegate.m */,
-				4FF1DE6C261CD8BC0087F00F /* SceneDelegate.h */,
-				4FF1DE6D261CD8BC0087F00F /* SceneDelegate.m */,
-				4FF1DE6F261CD8BC0087F00F /* ViewController.h */,
-				4FF1DE70261CD8BC0087F00F /* ViewController.m */,
+				4FA3A787261FE49A00513762 /* ModelBase Files */,
+				4FA3A78A261FE50600513762 /* ObjC Files */,
+				4FA3A788261FE4DF00513762 /* Swift Files */,
 				4FF1DE72261CD8BC0087F00F /* Main.storyboard */,
 				4FF1DE75261CD8BD0087F00F /* Assets.xcassets */,
 				4FF1DE77261CD8BD0087F00F /* LaunchScreen.storyboard */,
 				4FF1DE7A261CD8BD0087F00F /* Info.plist */,
 				4FF1DE7B261CD8BD0087F00F /* main.m */,
+				4F423630261D5D7E0096C229 /* ff_RW_Sample-Bridging-Header.h */,
+				4F7D62DC261FE0BF00612ECB /* ff_RW_Sample.xcdatamodeld */,
 			);
 			path = ff_RW_Sample;
 			sourceTree = "<group>";
@@ -106,6 +154,7 @@
 				TargetAttributes = {
 					4FF1DE65261CD8BC0087F00F = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -145,10 +194,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F423632261D5D7F0096C229 /* File.swift in Sources */,
 				4FF1DE71261CD8BC0087F00F /* ViewController.m in Sources */,
+				4FD67503261EB03E001816CB /* XTableViewCell.swift in Sources */,
+				4F7D62AF261FD2BE00612ECB /* Store.swift in Sources */,
 				4FF1DE6B261CD8BC0087F00F /* AppDelegate.m in Sources */,
+				4FA3A785261FE48200513762 /* Place+CoreDataProperties.swift in Sources */,
+				4FA3A784261FE48200513762 /* Place+CoreDataClass.swift in Sources */,
+				4FD674FD261E5803001816CB /* Model.swift in Sources */,
 				4FF1DE7C261CD8BD0087F00F /* main.m in Sources */,
 				4FF1DE6E261CD8BC0087F00F /* SceneDelegate.m in Sources */,
+				4F7D62DE261FE0BF00612ECB /* ff_RW_Sample.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +265,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -268,6 +325,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -291,7 +349,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E5WFCNHABB;
 				INFOPLIST_FILE = ff_RW_Sample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -300,6 +360,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.stratosperception.ff-RW-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ff_RW_Sample/ff_RW_Sample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -309,7 +372,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E5WFCNHABB;
 				INFOPLIST_FILE = ff_RW_Sample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,6 +383,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.stratosperception.ff-RW-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ff_RW_Sample/ff_RW_Sample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -344,6 +411,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4F7D62DC261FE0BF00612ECB /* ff_RW_Sample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4F7D62DD261FE0BF00612ECB /* ff_RW_Sample.xcdatamodel */,
+			);
+			currentVersion = 4F7D62DD261FE0BF00612ECB /* ff_RW_Sample.xcdatamodel */;
+			path = ff_RW_Sample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4FF1DE5E261CD8BC0087F00F /* Project object */;
 }

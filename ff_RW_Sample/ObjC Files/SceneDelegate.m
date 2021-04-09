@@ -18,6 +18,20 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIWindowScene * windowScene = (UIWindowScene *) scene;
+    self.window.windowScene = windowScene;
+    //self.window.backgroundColor = [UIColor blueColor];
+    
+    NSString * storyboardName = @"Main";
+    NSString * vcName = @"FirstVC";
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:vcName];
+    UINavigationController * nc = [[UINavigationController alloc]initWithRootViewController:vc];
+    self.window.rootViewController = nc;
+    [self.window makeKeyAndVisible];
+    
 }
 
 
