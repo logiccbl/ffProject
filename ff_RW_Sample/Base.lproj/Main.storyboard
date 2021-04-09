@@ -26,12 +26,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNc-Wx-T6E" userLabel="Indetifier Call View Container">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dpZ-i0-SJk" userLabel="Indentifier Call Stack View">
-                                                        <rect key="frame" x="51" y="13" width="266" height="52"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dpZ-i0-SJk" userLabel="Indentifier Call Stack View">
+                                                        <rect key="frame" x="116" y="4" width="266" height="52"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Indentifier" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oMy-iR-XJ1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="182" height="52"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="height" priority="750" constant="52" id="8lk-dc-haX"/>
                                                                     <constraint firstAttribute="width" priority="950" constant="100" id="ZQP-rS-jbL"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -51,13 +52,19 @@
                                                                 <rect key="frame" x="266" y="0.0" width="0.0" height="52"/>
                                                             </activityIndicatorView>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="250" constant="52" id="I3q-yz-BXv"/>
+                                                            <constraint firstAttribute="width" priority="250" constant="266" id="qLE-kd-1QU"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="3vg-vY-zhU"/>
+                                                    <constraint firstItem="dpZ-i0-SJk" firstAttribute="centerY" secondItem="PNc-Wx-T6E" secondAttribute="centerY" priority="250" id="7Qg-BW-REZ"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8yz-mw-6zV" secondAttribute="trailing" constant="20" id="ahG-Jh-b88"/>
-                                                    <constraint firstItem="oMy-iR-XJ1" firstAttribute="centerX" secondItem="PNc-Wx-T6E" secondAttribute="centerX" priority="900" id="uFD-bv-1hR"/>
+                                                    <constraint firstItem="oMy-iR-XJ1" firstAttribute="centerX" secondItem="PNc-Wx-T6E" secondAttribute="centerX" id="uFD-bv-1hR"/>
+                                                    <constraint firstItem="dpZ-i0-SJk" firstAttribute="centerX" secondItem="PNc-Wx-T6E" secondAttribute="centerX" priority="250" id="wSZ-Ym-EGz"/>
                                                     <constraint firstItem="oMy-iR-XJ1" firstAttribute="centerY" secondItem="PNc-Wx-T6E" secondAttribute="centerY" id="y6V-Cc-K0r"/>
                                                 </constraints>
                                             </view>
@@ -1188,6 +1195,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autoRefreshBarButton" destination="UFB-MO-oSL" id="0Wr-4e-csg"/>
                         <outlet property="currentForecastSwitch" destination="vSK-0T-M1w" id="z0w-ED-QJw"/>
                         <outlet property="favoriteIndicator" destination="jhJ-FV-SG3" id="FK6-jV-pQY"/>
                         <outlet property="historyNoticePositionConstraint" destination="4jq-ro-5Tv" id="wDr-aN-nEs"/>

@@ -279,12 +279,13 @@ typedef enum {
 -(void)callVC:(int)isCurrent{
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    __weak ViewController * weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         DetailVC * vc = [storyboard instantiateViewControllerWithIdentifier:@"SecondVC"];
         [vc selectedPlaceCache:self.cache isCurrent:isCurrent];
         [self.navigationController pushViewController:vc animated:YES];
         self.identifierTextField.text = nil;
-        vc.delegate = self;
+        vc.delegate = weakSelf;
     });
 
 }

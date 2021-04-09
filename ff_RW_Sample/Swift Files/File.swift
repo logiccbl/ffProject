@@ -68,7 +68,9 @@ enum EX_ForeCastPrelim : Int {
     
     var isAutoRefresh = false
     var timerAutoRefreshTimer : Timer?
-    let RefreshTime = 20.0
+    let RefreshTime = 600.0
+    
+    @IBOutlet weak var autoRefreshBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -257,6 +259,7 @@ enum EX_ForeCastPrelim : Int {
     
     @IBAction func refresh(_ sender: UIBarButtonItem) {
         refreshOps()
+        stopAutoRefresh()
     }
     
     
@@ -267,14 +270,24 @@ enum EX_ForeCastPrelim : Int {
         
         if self.isAutoRefresh{
             refreshOps()
+            DispatchQueue.main.async {
+                self.autoRefreshBarButton.tintColor = UIColor.red
+            }
             self.timerAutoRefreshTimer = Timer.scheduledTimer(withTimeInterval: RefreshTime, repeats: true, block: { timer in
                 self.refreshOps()
             })
         }
         else{
-            if let timer = self.timerAutoRefreshTimer{
-                timer.invalidate()
-            }
+            stopAutoRefresh()
+        }
+    }
+    
+    func stopAutoRefresh(){
+        if let timer = self.timerAutoRefreshTimer{
+            timer.invalidate()
+        }
+        DispatchQueue.main.async {
+            self.autoRefreshBarButton.tintColor = UIColor.blue
         }
     }
     
