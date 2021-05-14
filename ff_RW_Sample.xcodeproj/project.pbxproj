@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F423632261D5D7F0096C229 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F423631261D5D7F0096C229 /* File.swift */; };
-		4F7D62AF261FD2BE00612ECB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D62AE261FD2BE00612ECB /* Store.swift */; };
+		4F645BA526324F0400AC0E2B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F645BA426324F0400AC0E2B /* MapKit.framework */; };
+		4F7935CF26269E0400DC8078 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7935CE26269E0400DC8078 /* TestViewController.m */; };
 		4F7D62DE261FE0BF00612ECB /* ff_RW_Sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D62DC261FE0BF00612ECB /* ff_RW_Sample.xcdatamodeld */; };
 		4FA3A784261FE48200513762 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3A782261FE48200513762 /* Place+CoreDataClass.swift */; };
 		4FA3A785261FE48200513762 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3A783261FE48200513762 /* Place+CoreDataProperties.swift */; };
@@ -26,7 +27,9 @@
 /* Begin PBXFileReference section */
 		4F423630261D5D7E0096C229 /* ff_RW_Sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ff_RW_Sample-Bridging-Header.h"; sourceTree = "<group>"; };
 		4F423631261D5D7F0096C229 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		4F7D62AE261FD2BE00612ECB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		4F645BA426324F0400AC0E2B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4F7935CD26269E0400DC8078 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		4F7935CE26269E0400DC8078 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		4F7D62DD261FE0BF00612ECB /* ff_RW_Sample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ff_RW_Sample.xcdatamodel; sourceTree = "<group>"; };
 		4FA3A782261FE48200513762 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4FA3A783261FE48200513762 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -51,12 +54,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F645BA526324F0400AC0E2B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F645BA326324F0400AC0E2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F645BA426324F0400AC0E2B /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4FA3A787261FE49A00513762 /* ModelBase Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +84,6 @@
 			children = (
 				4F423631261D5D7F0096C229 /* File.swift */,
 				4FD674FC261E5803001816CB /* Model.swift */,
-				4F7D62AE261FD2BE00612ECB /* Store.swift */,
 				4FD67502261EB03E001816CB /* XTableViewCell.swift */,
 			);
 			path = "Swift Files";
@@ -87,6 +98,8 @@
 				4FF1DE6D261CD8BC0087F00F /* SceneDelegate.m */,
 				4FF1DE6F261CD8BC0087F00F /* ViewController.h */,
 				4FF1DE70261CD8BC0087F00F /* ViewController.m */,
+				4F7935CD26269E0400DC8078 /* TestViewController.h */,
+				4F7935CE26269E0400DC8078 /* TestViewController.m */,
 			);
 			path = "ObjC Files";
 			sourceTree = "<group>";
@@ -96,6 +109,7 @@
 			children = (
 				4FF1DE68261CD8BC0087F00F /* ff_RW_Sample */,
 				4FF1DE67261CD8BC0087F00F /* Products */,
+				4F645BA326324F0400AC0E2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,9 +211,9 @@
 				4F423632261D5D7F0096C229 /* File.swift in Sources */,
 				4FF1DE71261CD8BC0087F00F /* ViewController.m in Sources */,
 				4FD67503261EB03E001816CB /* XTableViewCell.swift in Sources */,
-				4F7D62AF261FD2BE00612ECB /* Store.swift in Sources */,
 				4FF1DE6B261CD8BC0087F00F /* AppDelegate.m in Sources */,
 				4FA3A785261FE48200513762 /* Place+CoreDataProperties.swift in Sources */,
+				4F7935CF26269E0400DC8078 /* TestViewController.m in Sources */,
 				4FA3A784261FE48200513762 /* Place+CoreDataClass.swift in Sources */,
 				4FD674FD261E5803001816CB /* Model.swift in Sources */,
 				4FF1DE7C261CD8BD0087F00F /* main.m in Sources */,

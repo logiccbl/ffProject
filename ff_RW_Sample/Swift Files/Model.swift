@@ -291,4 +291,42 @@ class excerciseModel : NSObject{
         */
         return conditionOut
     }
+    
+    
+    
+    func playGround (){
+       
+        struct Fable : Story{
+            var title : String?
+            var place: String
+            
+            
+        }
+        
+        
+        
+        
+        
+        let test : String? = "Who"
+        
+        if let check = test as? Story{
+            print("value \(check)")
+            
+        }
+        
+        
+    }
+    
+    let wildWest : String = "Hello Wild"
+}
+
+protocol Story {
+    var place : String { get }
+    func origin() -> String
+}
+
+extension Story  {
+    func origin() -> String {
+        return ("I came from \(place)")
+    }
 }

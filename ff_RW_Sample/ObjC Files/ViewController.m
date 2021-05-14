@@ -45,7 +45,9 @@ typedef enum {
     kHistory
 } selectorFilters;
 
-#define PLACEINDICATORLENGTH 4
+#define PLACEINDICATORLENGTH_SHORT 3
+#define PLACEINDICATORLENGTH_LONG 4
+
 #define EXERCISEENDPOINT_PREFIX @"https://qa.foreflight.com/weather/report"
 #define EXERCIEHEADERFIELDNAME @"ff-coding-exercise"
 #define EXERCISEHEADERFIELDVALUE @"1"
@@ -361,7 +363,7 @@ typedef enum {
 #pragma mark textfield processing
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
-    if(textField.text.length == PLACEINDICATORLENGTH){
+    if(textField.text.length == PLACEINDICATORLENGTH_SHORT || textField.text.length == PLACEINDICATORLENGTH_LONG){
         [self hitEndpointWith:[textField.text lowercaseString]];
     }
     return YES;
@@ -378,7 +380,8 @@ typedef enum {
     
     if(string.length > 0){
         if(textField.text.length < 4){
-            if ([[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[string characterAtIndex:0]]){
+            BOOL isNumber = [[NSCharacterSet decimalDigitCharacterSet] characterIsMember:[string characterAtIndex:0]];
+            if ([[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[string characterAtIndex:0]] || isNumber){
                 returnVal = YES;
             }
         }

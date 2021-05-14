@@ -72,7 +72,6 @@ class XTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        latitude.text = "33330300303"
        
     }
 

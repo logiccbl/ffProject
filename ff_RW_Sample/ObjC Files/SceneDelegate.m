@@ -6,6 +6,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "TestViewController.h"
 
 @interface SceneDelegate ()
 
@@ -20,14 +21,17 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIWindowScene * windowScene = (UIWindowScene *) scene;
-    self.window.windowScene = windowScene;
+    // UIWindowScene * windowScene = (UIWindowScene *) scene;
+    self.window.windowScene = (UIWindowScene *) scene; //  windowScene;
     //self.window.backgroundColor = [UIColor blueColor];
     
     NSString * storyboardName = @"Main";
     NSString * vcName = @"FirstVC";
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
     UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:vcName];
+    
+    //TestViewController * vc = [[TestViewController alloc]init];
+    //vc.view.backgroundColor = [UIColor purpleColor];
     UINavigationController * nc = [[UINavigationController alloc]initWithRootViewController:vc];
     self.window.rootViewController = nc;
     [self.window makeKeyAndVisible];

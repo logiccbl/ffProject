@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 
 var stateCache : Conditions!
@@ -26,9 +27,13 @@ enum EX_ForeCastPrelim : Int {
     @objc func makeFavorite(_ makeFave : Bool, placeIdent : String)
     @objc func faveStatus(_ placeIdent : String) -> Bool
 }
-@objcMembers class DetailVC : UIViewController, UITableViewDelegate, UITableViewDataSource{
+@objcMembers class DetailVC : UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate{
     
     @objc var delegate : FileDelegate?
+    
+    @IBOutlet weak var mapView: MKMapView!
+    var isMapEstablished = false
+    
     
     @IBOutlet var header: UIView!
     
@@ -70,6 +75,8 @@ enum EX_ForeCastPrelim : Int {
     var timerAutoRefreshTimer : Timer?
     let RefreshTime = 600.0
     
+    let MAPALTITUDE = 10000.0
+    
     @IBOutlet weak var autoRefreshBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -107,6 +114,9 @@ enum EX_ForeCastPrelim : Int {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        mapView.delegate = self
+        mapView.mapType = MKMapType.hybrid
     }
     
     @objc func configureForCurrent(){
@@ -316,6 +326,24 @@ enum EX_ForeCastPrelim : Int {
         }
     }
     
+    func loadMap(latitude: Double, longitude: Double){
+        
+        
+        let coord = CLLocationCoordinate2DMake(latitude, longitude)
+        
+       
+        if(!isMapEstablished){
+            mapView.setCenter(coord, animated: true)
+            let camera = MKMapCamera.init(lookingAtCenter: coord, fromEyeCoordinate: coord, eyeAltitude: MAPALTITUDE)
+            mapView.setCamera(camera, animated:false)
+            isMapEstablished = true
+        }
+        else{
+            mapView.setCenter(coord, animated: true)
+        }
+        
+        
+    }
     
     
     func alertToBadData(){
@@ -359,6 +387,11 @@ enum EX_ForeCastPrelim : Int {
             
             cell.latitude?.text = "\(stateArrayVal.lat)"
             cell.longitude?.text = "\(stateArrayVal.lon)"
+            
+            if stateArrayVal.lat != 0 && stateArrayVal.lon != 0{
+                    loadMap(latitude: stateArrayVal.lat, longitude: stateArrayVal.lon)
+            }
+            
             if let dens = stateArrayVal.densityAltitudeFt {
                 cell.densityAltitudeFt?.text = "\(dens)"
             }
